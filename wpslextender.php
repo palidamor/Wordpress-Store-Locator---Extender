@@ -80,10 +80,6 @@ function convert_state($name, $name_type = null){
 function lovetap($atts){
 if(is_plugin_active( 'wp-store-locator/wp-store-locator.php' )){
 
-	// $args = array(
-	//     'post_type' => 'wpsl_stores'
-	// );
-	
 	$a = shortcode_atts(array('state' => ''), $atts);
 
 	if($a['state']){
@@ -95,8 +91,6 @@ if(is_plugin_active( 'wp-store-locator/wp-store-locator.php' )){
 			$state2 = $a['state'];
 		}
 
-		// $args['meta_key'] = 'wpsl_state';
-		// $args['meta_value'] = $state;
 	}
 
 	$args = array( 
@@ -117,23 +111,9 @@ if(is_plugin_active( 'wp-store-locator/wp-store-locator.php' )){
 		)
 	);
 
-// error_log('atts = ', 1, 'david.hinojosa@voicemediagroup.com');
-// 	error_log('atts = ' . print_r($atts, true), 1, 'david.hinojosa@voicemediagroup.com');
-
-	// if (isset($state) && !empty($state)){
-	// 	$args['meta_key'] = 'wpsl_state';
-	// 	$args['meta_value'] = $state;
-	// }
-
 	$args['post_type'] = 'wpsl_stores';
 	
 	$test = get_posts( $args );
-
-	// error_log('args = ' . print_r($args, true), 1, 'david.hinojosa@voicemediagroup.com');
-
-	// $test = get_posts( array(
-	//     'post_type' => 'wpsl_stores'
-	// ) );
 
 	foreach($test as $post){
 		$ids[$post->ID] = get_post_meta($post->ID);
@@ -167,7 +147,6 @@ a.loc-title{
 			$body .= 
 		}
 	*/
-	//$body = '<div class="grid-container"><div class="little-grid">';
 	$body .= '<div class="little-grid">';
 	
 	if(!empty($locationInfo['wpsl_url'][0])){
@@ -219,6 +198,5 @@ a.loc-title{
 	}
 }
 
-// [store_loc state='AZ']
 add_shortcode( 'store_loc', 'lovetap' );
 ?>
