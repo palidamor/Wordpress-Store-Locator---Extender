@@ -3,8 +3,8 @@
 Plugin Name: WP Store Locator Extender
 Description: Taps into WP Store Locator and allows for use of shortcode to display grids of location data. Shortcode Example: [store_loc state="AZ"]
 Version: 1.0
-Author: Voice Media Group | David Hinojosa
-Author URI: http://www.voicemediagroup.com
+Author: David Hinojosa
+Author URI: http://www.davidhinojosa.com
 */
 
  function my_error_notice() {
