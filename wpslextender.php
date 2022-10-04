@@ -80,7 +80,15 @@ function convert_state($name, $name_type = null){
 function lovetap($atts){
 if(is_plugin_active( 'wp-store-locator/wp-store-locator.php' )){
 
-	$a = shortcode_atts(array('state' => ''), $atts);
+?>
+
+<style>
+	<?php include './style.css'; ?>
+</style>
+
+<?php	
+
+$a = shortcode_atts(array('state' => ''), $atts);
 
 	if($a['state']){
 		if(strlen($a['state']) > 2){
@@ -119,26 +127,6 @@ if(is_plugin_active( 'wp-store-locator/wp-store-locator.php' )){
 		$ids[$post->ID] = get_post_meta($post->ID);
 	}
 
-	echo '<style>
-.little-grid{
-	width: 33.33%;
-	float: left;
-	padding: 20px;
-	min-height: 220px;
-}
-
-a.loc-title{
-	color: #005A96 !important;
-	font-weight: 700 !important;
-}
-
-@media screen and (max-width: 768px){
-	.little-grid{
-		width: 100%;
-		float: none;
-	}
-}
-</style>';
 
 	$body = '';
 	foreach($ids as $post_ID => $locationInfo){
