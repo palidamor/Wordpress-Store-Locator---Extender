@@ -77,11 +77,12 @@ function convert_state($name, $name_type = null){
 
 }
 
+// Checks if WP Store Locator is enabled
 function lovetap($atts){
 if(is_plugin_active( 'wp-store-locator/wp-store-locator.php' )){
 
 ?>
-
+<!-- WP Store Locator Extender stylesheet -->
 <style>
 	<?php include './style.css'; ?>
 </style>
@@ -126,7 +127,6 @@ $a = shortcode_atts(array('state' => ''), $atts);
 	foreach($test as $post){
 		$ids[$post->ID] = get_post_meta($post->ID);
 	}
-
 
 	$body = '';
 	foreach($ids as $post_ID => $locationInfo){

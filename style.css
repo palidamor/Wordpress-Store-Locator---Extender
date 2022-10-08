@@ -1,0 +1,16 @@
+.little-grid{
+	width: 33.33%;
+	float: left;
+	padding: 20px;
+	min-height: 220px;
+}
+a.loc-title{
+	color: #005A96 !important;
+	font-weight: 700 !important;
+}
+@media screen and (max-width: 768px){
+	.little-grid{
+		width: 100%;
+		float: none;
+	}
+}
